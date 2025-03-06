@@ -9,9 +9,11 @@ runs:
       shell: bash
       run: |
         echo "This is running on ${{ runner.os }}"
+        echo $SHELL
 
     - name: Run pwsh script on Windows
       if: runner.os == 'Windows'
       shell: pwsh
       run: |
         Write-Host "This is running on ${{ runner.os }}"
+        Write-Host $SHELL
