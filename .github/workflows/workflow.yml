@@ -16,5 +16,5 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v4
 
-      - name: Hello World no shell
+      - name: Run composite action
         uses: ./.github/actions/composite
