@@ -1,0 +1,17 @@
+name: "Composite Action with Conditional Shell"
+description: "An example composite action that uses different shells based on the runner type"
+
+runs:
+  using: "composite"
+  steps:
+    - name: Run bash script on Ubuntu
+      if: runner.os == 'Linux' || runner.os == 'macOS'
+      shell: bash
+      run: |
+        echo "This is running on ${{ runner.os }}"
+
+    - name: Run pwsh script on Windows
+      if: runner.os == 'Windows'
+      shell: pwsh
+      run: |
+        Write-Host "This is running on ${{ runner.os }}"
